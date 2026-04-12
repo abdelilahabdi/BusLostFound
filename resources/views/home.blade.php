@@ -14,10 +14,10 @@
         </p>
 
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#" class="inline-flex items-center justify-center rounded-md bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-700">
+            <a href="{{ route('announcements.create', ['type' => 'lost']) }}" class="inline-flex items-center justify-center rounded-md bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-700">
                 D&eacute;clarer un objet perdu
             </a>
-            <a href="#" class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100">
+            <a href="{{ route('announcements.create', ['type' => 'found']) }}" class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100">
                 D&eacute;clarer un objet trouv&eacute;
             </a>
         </div>

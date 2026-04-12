@@ -12,25 +12,41 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('announcements.index') }}" class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
+                    <a href="{{ route('announcements.index') }}"
+                        class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
                         Annonces
                     </a>
                 </li>
                 @auth
                     @if (auth()->user()->role === 'admin')
                         <li>
-                            <a href="{{ route('admin.dashboard') }}" class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
+                            <a href="{{ route('admin.dashboard') }}"
+                                class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
                                 Admin
                             </a>
                         </li>
                     @endif
                     <li>
-                        <a href="{{ route('dashboard') }}" class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
+                        <a href="{{ route('dashboard') }}"
+                            class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
                             Tableau de bord
                         </a>
                     </li>
+
+
+
                     <li>
-                        <a href="{{ route('messages.index') }}" class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
+                        <a href="{{ route('profile.edit') }}"
+                            class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
+                            Profile
+                        </a>
+                    </li>
+
+
+
+                    <li>
+                        <a href="{{ route('messages.index') }}"
+                            class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
                             Messages
                         </a>
                     </li>
@@ -49,7 +65,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('register') }}" class="rounded-md bg-slate-900 px-3 py-2 text-white hover:bg-slate-700">
+                        <a href="{{ route('register') }}"
+                            class="rounded-md bg-slate-900 px-3 py-2 text-white hover:bg-slate-700">
                             Inscription
                         </a>
                     </li>
