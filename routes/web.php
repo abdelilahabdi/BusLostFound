@@ -46,6 +46,10 @@ Route::middleware(['auth', 'active.user'])->group(function () {
         ->whereNumber('announcement')
         ->name('announcements.messages.store');
     Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
+    Route::get('/messages/{announcement}/{participant}', [MessageController::class, 'show'])
+        ->whereNumber('announcement')
+        ->whereNumber('participant')
+        ->name('messages.show');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

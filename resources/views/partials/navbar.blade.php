@@ -5,6 +5,15 @@
                 BusLost&Found
             </a>
 
+            @auth
+                @php
+                    $unreadMessagesCount = \App\Models\Message::query()
+                        ->where('receiver_id', auth()->id())
+                        ->where('is_read', false)
+                        ->count();
+                @endphp
+            @endauth
+
             <ul class="flex flex-wrap items-center gap-2 text-sm font-medium text-slate-700 sm:gap-4">
                 <li>
                     <a href="{{ route('home') }}" class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
@@ -38,7 +47,7 @@
                     <li>
                         <a href="{{ route('profile.edit') }}"
                             class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
-                            Profile
+                            Profil
                         </a>
                     </li>
 
@@ -46,8 +55,13 @@
 
                     <li>
                         <a href="{{ route('messages.index') }}"
-                            class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
+                            class="inline-flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
                             Messages
+                            @if ($unreadMessagesCount > 0)
+                                <span class="inline-flex min-w-5 items-center justify-center rounded-full bg-amber-100 px-1.5 py-0.5 text-xs font-semibold text-amber-800">
+                                    {{ $unreadMessagesCount > 99 ? '99+' : $unreadMessagesCount }}
+                                </span>
+                            @endif
                         </a>
                     </li>
                     <li>
