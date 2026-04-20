@@ -1,73 +1,107 @@
-@extends('layouts.app')
+@extends('layouts.admin-dashboard')
 
 @section('title', 'BusLost&Found - Admin Signalements')
 
-@section('content')
-    <section class="rounded-xl bg-white p-8 shadow-sm ring-1 ring-slate-200 sm:p-10">
-        <div class="flex flex-wrap items-center justify-between gap-3">
-            <div>
-                <h1 class="text-2xl font-bold text-slate-900 sm:text-3xl">Gestion des signalements</h1>
-                <p class="mt-2 text-sm text-slate-600 sm:text-base">
-                    Consultez les signalements des utilisateurs et marquez-les comme examines.
-                </p>
-            </div>
+@section('admin-page-title', 'Gestion des signalements')
+@section('admin-page-subtitle', 'Consultez et traitez les signalements des utilisateurs.')
+@section('admin-page-actions')
+    <a href="{{ route('admin.dashboard') }}" class="inline-flex h-10 items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">
+        Retour au tableau de bord
+    </a>
+@endsection
 
-            <a href="{{ route('admin.dashboard') }}" class="inline-flex items-center rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100">
-                Retour au tableau de bord admin
-            </a>
-        </div>
+@section('admin-content')
+    @php
+        $totalReports = method_exists($reports, 'total') ? $reports->total() : $reports->count();
+        $reportsCollection = method_exists($reports, 'getCollection') ? $reports->getCollection() : collect($reports);
+        $pendingReportsOnPage = $reportsCollection->where('status', 'pending')->count();
+        $reviewedReportsOnPage = $reportsCollection->where('status', '!=', 'pending')->count();
+    @endphp
+
+    <section class="grid gap-4 sm:grid-cols-3">
+        <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Total signalements</p>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-slate-900">{{ $totalReports }}</p>
+        </article>
+        <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">En attente (cette page)</p>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-amber-700">{{ $pendingReportsOnPage }}</p>
+        </article>
+        <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Trait&eacute;s (cette page)</p>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-emerald-700">{{ $reviewedReportsOnPage }}</p>
+        </article>
     </section>
 
     @if ($reports->isEmpty())
-        <section class="mt-6 rounded-xl bg-white p-8 text-center shadow-sm ring-1 ring-slate-200">
-            <h2 class="text-lg font-semibold text-slate-900">Aucun signalement trouve</h2>
-            <p class="mt-2 text-sm text-slate-600">Les signalements apparaitront ici quand des utilisateurs en enverront.</p>
+        <section class="rounded-3xl border border-slate-200 bg-white p-10 text-center shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
+            <div class="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 text-slate-500">
+                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M10.3 3.88l-8.2 14.2A2 2 0 003.82 21h16.36a2 2 0 001.72-2.92l-8.2-14.2a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+            </div>
+            <h2 class="mt-5 text-xl font-semibold text-slate-900">Aucun signalement trouv&eacute;</h2>
+            <p class="mt-2 text-sm text-slate-600">
+                Les signalements appara&icirc;tront ici quand des utilisateurs en enverront.
+            </p>
         </section>
     @else
-        <section class="mt-6 overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-200">
+        <section class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
+            <div class="border-b border-slate-200 px-5 py-4 sm:px-6">
+                <h2 class="text-lg font-semibold text-slate-900">Liste des signalements</h2>
+                <p class="mt-1 text-sm text-slate-600">
+                    Analysez les signalements et marquez-les comme trait&eacute;s apr&egrave;s v&eacute;rification.
+                </p>
+            </div>
+
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-slate-200">
-                    <thead class="bg-slate-50">
+                    <thead class="bg-slate-50/80">
                         <tr>
-                            <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-600">ID</th>
-                            <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-600">Annonce</th>
-                            <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-600">Signale par</th>
-                            <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-600">Raison</th>
-                            <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-600">Statut</th>
-                            <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-600">Date</th>
-                            <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-600">Actions</th>
+                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">ID</th>
+                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Annonce</th>
+                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Signal&eacute; par</th>
+                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Raison</th>
+                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Statut</th>
+                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Date</th>
+                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100 bg-white">
                         @foreach ($reports as $report)
-                            <tr>
-                                <td class="px-4 py-3 text-sm text-slate-700">#{{ $report->id }}</td>
-                                <td class="px-4 py-3 text-sm font-medium text-slate-900">
+                            <tr class="align-middle transition hover:bg-slate-50/60">
+                                <td class="px-5 py-4 text-sm text-slate-700">
+                                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">
+                                        #{{ $report->id }}
+                                    </span>
+                                </td>
+                                <td class="px-5 py-4 text-sm font-semibold text-slate-900">
                                     {{ $report->announcement->title }}
                                 </td>
-                                <td class="px-4 py-3 text-sm text-slate-700">
+                                <td class="px-5 py-4 text-sm text-slate-700">
                                     {{ $report->user->name }}
                                 </td>
-                                <td class="px-4 py-3 text-sm text-slate-700">
-                                    <p class="max-w-lg whitespace-pre-line break-words">{{ $report->reason }}</p>
+                                <td class="px-5 py-4 text-sm text-slate-700">
+                                    <p class="max-w-xl whitespace-pre-line break-words leading-6 text-slate-600">{{ $report->reason }}</p>
                                 </td>
-                                <td class="px-4 py-3 text-sm">
+                                <td class="px-5 py-4 text-sm">
                                     @if ($report->status === 'pending')
-                                        <span class="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
-                                            En attente
+                                        <span class="inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
+                                            Non trait&eacute;
                                         </span>
                                     @else
-                                        <span class="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800">
-                                            Examine
+                                        <span class="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+                                            Trait&eacute;
                                         </span>
                                     @endif
                                 </td>
-                                <td class="px-4 py-3 text-sm text-slate-700">
+                                <td class="whitespace-nowrap px-5 py-4 text-sm text-slate-700">
                                     {{ $report->created_at?->format('d/m/Y H:i') }}
                                 </td>
-                                <td class="px-4 py-3 text-sm">
+                                <td class="px-5 py-4 text-sm">
                                     <div class="flex flex-wrap gap-2">
-                                        <a href="{{ route('announcements.show', $report->announcement) }}" class="inline-flex items-center rounded-md border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100">
+                                        <a href="{{ route('announcements.show', $report->announcement) }}" class="inline-flex h-9 items-center justify-center rounded-2xl border border-slate-300 bg-slate-50 px-3.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100">
                                             Voir annonce
                                         </a>
 
@@ -75,13 +109,13 @@
                                             <form method="POST" action="{{ route('admin.reports.review', $report) }}">
                                                 @csrf
                                                 @method('PATCH')
-                                                <button type="submit" class="inline-flex items-center rounded-md border border-emerald-300 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700 hover:bg-emerald-100">
-                                                    Marquer comme examine
+                                                <button type="submit" class="inline-flex h-9 items-center justify-center rounded-2xl border border-emerald-600 bg-emerald-600 px-3.5 text-xs font-semibold text-white transition hover:bg-emerald-700">
+                                                    Marquer comme trait&eacute;
                                                 </button>
                                             </form>
                                         @else
-                                            <span class="inline-flex items-center rounded-md border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-500">
-                                                Deja examine
+                                            <span class="inline-flex h-9 items-center justify-center rounded-2xl border border-slate-200 bg-slate-100 px-3.5 text-xs font-semibold text-slate-500">
+                                                D&eacute;j&agrave; trait&eacute;
                                             </span>
                                         @endif
                                     </div>
@@ -93,7 +127,7 @@
             </div>
         </section>
 
-        <div class="mt-6">
+        <div class="rounded-3xl border border-slate-200 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
             {{ $reports->links() }}
         </div>
     @endif
