@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'BusLost&Found - D&eacute;tail annonce')
+@section('title', 'BusLost&Found - Détail annonce')
 
 @section('content')
     <section class="rounded-3xl bg-slate-50/70 p-6 ring-1 ring-slate-200 sm:p-10">
@@ -14,24 +14,24 @@
 
                         <div class="flex flex-wrap items-center gap-2">
                             <span class="rounded-full px-3 py-1 text-xs font-semibold uppercase {{ $announcement->type === 'lost' ? 'bg-red-100 text-red-600' : 'bg-emerald-100 text-emerald-600' }}">
-                                {{ $announcement->type === 'lost' ? 'Perdu' : 'Trouv&eacute;' }}
+                                {{ $announcement->type === 'lost' ? 'Perdu' : 'Trouvé' }}
                             </span>
                             <span class="rounded-full px-3 py-1 text-xs font-semibold uppercase {{ $announcement->status === 'active' ? 'bg-teal-100 text-teal-700' : 'bg-slate-100 text-slate-700' }}">
-                                {{ $announcement->status === 'active' ? 'Active' : 'R&eacute;solue' }}
+                                {{ $announcement->status === 'active' ? 'Active' : 'Résolue' }}
                             </span>
                         </div>
                     </div>
 
                     <p class="mt-4 text-sm text-slate-600 sm:text-base">
-                        Consultez les d&eacute;tails de cette annonce et contactez le propri&eacute;taire si besoin.
+                        Consultez les détails de cette annonce et contactez le propriétaire si besoin.
                     </p>
                     <p class="mt-1 text-sm text-slate-500">
-                        Publi&eacute;e par {{ $announcement->user->name }} le {{ $announcement->event_date?->format('d/m/Y') }}.
+                        Publiée par {{ $announcement->user->name }} le {{ $announcement->event_date?->format('d/m/Y') }}.
                     </p>
                 </article>
 
                 <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)] sm:p-8">
-                    <h2 class="text-xl font-semibold text-slate-900">Description compl&egrave;te</h2>
+                    <h2 class="text-xl font-semibold text-slate-900">Description complète</h2>
                     <p class="mt-4 whitespace-pre-line text-sm leading-7 text-slate-700 sm:text-base">
                         {{ $announcement->description }}
                     </p>
@@ -40,9 +40,9 @@
                 @auth
                     @if (auth()->id() !== $announcement->user_id)
                         <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
-                            <h2 class="text-lg font-semibold text-slate-900">Contacter le propri&eacute;taire</h2>
+                            <h2 class="text-lg font-semibold text-slate-900">Contacter le propriétaire</h2>
                             <p class="mt-2 text-sm text-slate-600">
-                                Envoyez un message simple au propri&eacute;taire de cette annonce.
+                                Envoyez un message simple au propriétaire de cette annonce.
                             </p>
 
                             <form method="POST" action="{{ route('announcements.messages.store', $announcement) }}" class="mt-5 space-y-5">
@@ -74,7 +74,7 @@
                         <article class="rounded-3xl border border-red-100 bg-red-50/40 p-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
                             <h2 class="text-lg font-semibold text-slate-900">Signaler cette annonce</h2>
                             <p class="mt-2 text-sm text-slate-600">
-                                Si cette annonce vous semble inappropri&eacute;e, expliquez la raison ci-dessous.
+                                Si cette annonce vous semble inappropriée, expliquez la raison ci-dessous.
                             </p>
 
                             <form method="POST" action="{{ route('announcements.reports.store', $announcement) }}" class="mt-5 space-y-5">
@@ -116,7 +116,7 @@
                                 <path d="M3.5 5.5h13m-11.5 3h10m-8.5 3h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
                             </svg>
                             <div>
-                                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Cat&eacute;gorie</p>
+                                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Catégorie</p>
                                 <p class="font-medium text-slate-800">{{ $announcement->category->name }}</p>
                             </div>
                         </li>
@@ -136,7 +136,7 @@
                                 <path d="M10 6.5v3.8l2.4 1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                             <div>
-                                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Date de l'&eacute;v&eacute;nement</p>
+                                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Date de l'événement</p>
                                 <p class="font-medium text-slate-800">{{ $announcement->event_date?->format('d/m/Y') }}</p>
                             </div>
                         </li>
@@ -146,7 +146,7 @@
                                 <path d="M4.5 16.5c.8-2.5 3-4 5.5-4s4.7 1.5 5.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
                             </svg>
                             <div>
-                                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Publi&eacute; par</p>
+                                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Publié par</p>
                                 <p class="font-medium text-slate-800">{{ $announcement->user->name }}</p>
                             </div>
                         </li>
@@ -169,7 +169,7 @@
                                     <path d="M10 17s4.5-3.7 4.5-7A4.5 4.5 0 105.5 10c0 3.3 4.5 7 4.5 7z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                                 <div>
-                                    <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Arr&ecirc;t</p>
+                                    <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Arrêt</p>
                                     <p class="font-medium text-slate-800">{{ $announcement->stop_name }}</p>
                                 </div>
                             </li>

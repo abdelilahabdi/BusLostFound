@@ -6,7 +6,7 @@
 <div class="space-y-7">
     <section class="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-6">
         <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-900">Informations principales</h2>
-        <p class="mt-1 text-sm text-slate-600">Renseignez les d&eacute;tails essentiels de votre annonce.</p>
+        <p class="mt-1 text-sm text-slate-600">Renseignez les détails essentiels de votre annonce.</p>
 
         <div class="mt-5 grid gap-5 md:grid-cols-2">
             <div class="md:col-span-2">
@@ -26,14 +26,14 @@
             </div>
 
             <div>
-                <label for="category_id" class="block text-sm font-semibold text-slate-700">Cat&eacute;gorie</label>
+                <label for="category_id" class="block text-sm font-semibold text-slate-700">Catégorie</label>
                 <select
                     id="category_id"
                     name="category_id"
                     required
                     class="mt-1 block h-12 w-full rounded-2xl border-slate-300 bg-white px-4 text-slate-900 focus:border-blue-500 focus:ring-blue-500"
                 >
-                    <option value="">S&eacute;lectionnez une cat&eacute;gorie</option>
+                    <option value="">Sélectionnez une catégorie</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}" @selected((string) old('category_id', $announcement?->category_id) === (string) $category->id)>
                             {{ $category->name }}
@@ -67,7 +67,7 @@
                             @checked($selectedType === 'found')
                             class="h-4 w-4 border-slate-300 text-blue-600 focus:ring-blue-500"
                         >
-                        Objet trouv&eacute;
+                        Objet trouvé
                     </label>
                 </div>
                 @error('type')
@@ -113,7 +113,7 @@
             </div>
 
             <div>
-                <label for="event_date" class="block text-sm font-semibold text-slate-700">Date de l'&eacute;v&eacute;nement</label>
+                <label for="event_date" class="block text-sm font-semibold text-slate-700">Date de l'événement</label>
                 <input
                     id="event_date"
                     name="event_date"
@@ -143,7 +143,7 @@
             </div>
 
             <div>
-                <label for="stop_name" class="block text-sm font-semibold text-slate-700">Arr&ecirc;t (optionnel)</label>
+                <label for="stop_name" class="block text-sm font-semibold text-slate-700">Arrêt (optionnel)</label>
                 <input
                     id="stop_name"
                     name="stop_name"

@@ -12,7 +12,7 @@
                     <circle cx="8" cy="13" r="1.1" fill="currentColor" />
                     <circle cx="16" cy="13" r="1.1" fill="currentColor" />
                 </svg>
-                <span>BusLost&amp;Found</span>
+                <span>BusLost&Found</span>
             </a>
 
             @auth
@@ -75,7 +75,7 @@
                             @csrf
                             <button type="submit"
                                 class="rounded-2xl px-4 py-2 text-slate-700 transition hover:bg-slate-100 hover:text-slate-900">
-                                D&eacute;connexion
+                                Déconnexion
                             </button>
                         </form>
                     </li>

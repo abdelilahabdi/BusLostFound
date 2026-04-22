@@ -8,7 +8,7 @@
             <div class="max-w-3xl">
                 <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">Conversation</h1>
                 <p class="mt-3 text-base text-slate-600 sm:text-lg">
-                    &Eacute;change avec <span class="font-semibold text-slate-800">{{ $participant->name }}</span>
+                    Échange avec <span class="font-semibold text-slate-800">{{ $participant->name }}</span>
                 </p>
                 <p class="mt-1 text-sm text-slate-500 sm:text-base">
                     Concernant l'annonce : <span class="font-semibold text-slate-700">{{ $announcement->title }}</span>
@@ -31,7 +31,7 @@
             <div>
                 <h2 class="text-xl font-semibold text-slate-900">Historique des messages</h2>
                 <p class="mt-1 text-sm text-slate-600">
-                    Les messages sont affich&eacute;s du plus ancien au plus r&eacute;cent.
+                    Les messages sont affichés du plus ancien au plus récent.
                 </p>
             </div>
             <p class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700">
@@ -57,7 +57,7 @@
                             <p class="flex flex-wrap items-center gap-2 text-xs font-semibold {{ $isSentByAuthUser ? 'text-blue-100' : 'text-slate-600' }}">
                                 <span>{{ $isSentByAuthUser ? 'Vous' : $participant->name }}</span>
                                 <span class="rounded-full px-2 py-0.5 {{ $isSentByAuthUser ? 'bg-blue-500 text-white' : 'bg-slate-200 text-slate-700' }}">
-                                    {{ $isSentByAuthUser ? 'Envoy&eacute;' : 'Re&ccedil;u' }}
+                                    {{ $isSentByAuthUser ? 'Envoyé' : 'Reçu' }}
                                 </span>
                                 <span>Le {{ $message->created_at?->format('d/m/Y H:i') }}</span>
                             </p>
@@ -72,9 +72,9 @@
     </section>
 
     <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)] sm:p-8">
-        <h2 class="text-xl font-semibold text-slate-900">R&eacute;pondre</h2>
+        <h2 class="text-xl font-semibold text-slate-900">Répondre</h2>
         <p class="mt-1 text-sm text-slate-600">
-            Envoyez votre r&eacute;ponse &agrave; {{ $participant->name }}.
+            Envoyez votre réponse à {{ $participant->name }}.
         </p>
 
         <form method="POST" action="{{ route('announcements.messages.store', $announcement) }}" class="mt-5 space-y-5">
@@ -103,7 +103,7 @@
             </div>
 
             <button type="submit" class="inline-flex h-11 items-center justify-center rounded-2xl bg-blue-600 px-5 text-sm font-semibold text-white transition hover:bg-blue-700">
-                R&eacute;pondre
+                Répondre
             </button>
         </form>
     </section>

@@ -15,7 +15,7 @@
                 Bienvenue <span class="font-semibold text-slate-900">{{ auth()->user()->name }}</span>.
             </p>
             <p class="mt-1 text-sm text-slate-600 sm:text-base">
-                Suivez vos activit&eacute;s et acc&eacute;dez rapidement aux actions principales.
+                Suivez vos activités et accédez rapidement aux actions principales.
             </p>
         </div>
 
@@ -30,7 +30,7 @@
                 Mes messages
             </a>
             <a href="{{ route('home') }}" class="inline-flex h-11 items-center justify-center rounded-2xl border border-slate-300 bg-slate-50 px-4 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">
-                Retour &agrave; l'accueil
+                Retour à l'accueil
             </a>
         </div>
     </section>
@@ -47,21 +47,21 @@
         </article>
 
         <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_8px_24px_rgba(15,23,42,0.05)] sm:p-7">
-            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Annonces r&eacute;solues</p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Annonces résolues</p>
             <p class="mt-3 text-3xl font-bold tracking-tight text-slate-700">{{ $totalResolvedAnnouncements }}</p>
         </article>
     </section>
 
     <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.06)] sm:p-9">
-        <h2 class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Derni&egrave;res annonces</h2>
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Dernières annonces</h2>
         <p class="mt-2 text-sm text-slate-600">
-            Retrouvez vos publications les plus r&eacute;centes.
+            Retrouvez vos publications les plus récentes.
         </p>
 
         @if ($latestAnnouncements->isEmpty())
             <div class="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center">
                 <p class="text-sm text-slate-600">
-                    Vous n'avez pas encore publi&eacute; d'annonce.
+                    Vous n'avez pas encore publié d'annonce.
                 </p>
             </div>
         @else
@@ -79,10 +79,10 @@
 
                         <div class="mt-3 flex flex-wrap items-center gap-2 text-xs font-semibold sm:mt-4">
                             <span class="inline-flex h-7 items-center rounded-full border border-slate-200 bg-slate-100 px-2.5 text-slate-700">
-                                Type: {{ $announcement->type === 'lost' ? 'Perdu' : 'Trouv&eacute;' }}
+                                Type: {{ $announcement->type === 'lost' ? 'Perdu' : 'Trouvé' }}
                             </span>
                             <span class="inline-flex h-7 items-center rounded-full {{ $announcement->status === 'active' ? 'border border-emerald-200 bg-emerald-100 text-emerald-700' : 'border border-slate-200 bg-slate-100 text-slate-700' }} px-2.5">
-                                Statut: {{ $announcement->status === 'active' ? 'Active' : 'R&eacute;solue' }}
+                                Statut: {{ $announcement->status === 'active' ? 'Active' : 'Résolue' }}
                             </span>
                             <span class="inline-flex h-7 items-center rounded-full border border-blue-100 bg-blue-50 px-2.5 text-blue-700">
                                 Date: {{ $announcement->event_date?->format('d/m/Y') }}

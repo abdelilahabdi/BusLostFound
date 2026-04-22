@@ -9,7 +9,7 @@
             </div>
             <h1 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Confirmer votre mot de passe</h1>
             <p class="mx-auto mt-2 max-w-sm text-sm text-slate-600">
-                Cette zone est s&eacute;curis&eacute;e. Merci de confirmer votre mot de passe pour continuer.
+                Cette zone est sécurisée. Merci de confirmer votre mot de passe pour continuer.
             </p>
         </div>
 

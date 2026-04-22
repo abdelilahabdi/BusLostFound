@@ -10,9 +10,9 @@
                     <circle cx="16" cy="13" r="1.1" fill="currentColor" />
                 </svg>
             </div>
-            <h1 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Mot de passe oubli&eacute;</h1>
+            <h1 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Mot de passe oublié</h1>
             <p class="mx-auto mt-2 max-w-sm text-sm text-slate-600">
-                Indiquez votre adresse e-mail pour recevoir un lien de r&eacute;initialisation.
+                Indiquez votre adresse e-mail pour recevoir un lien de réinitialisation.
             </p>
         </div>
 
@@ -29,7 +29,7 @@
 
             <div class="flex justify-end pt-1.5">
                 <button type="submit" class="inline-flex h-11 items-center justify-center rounded-2xl bg-blue-600 px-5 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(37,99,235,0.22)] transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2">
-                    Envoyer le lien de r&eacute;initialisation
+                    Envoyer le lien de réinitialisation
                 </button>
             </div>
         </form>

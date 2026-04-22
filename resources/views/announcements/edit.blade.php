@@ -7,7 +7,7 @@
         <div class="mx-auto max-w-5xl">
             <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">Modifier mon annonce</h1>
             <p class="mt-3 text-base text-slate-600 sm:text-lg">
-                Mettez &agrave; jour les informations de votre publication avant validation.
+                Mettez à jour les informations de votre publication avant validation.
             </p>
         </div>
     </section>

@@ -12,7 +12,7 @@
             </div>
             <h1 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Nouveau mot de passe</h1>
             <p class="mx-auto mt-2 max-w-sm text-sm text-slate-600">
-                Choisissez un nouveau mot de passe s&eacute;curis&eacute; pour votre compte.
+                Choisissez un nouveau mot de passe sécurisé pour votre compte.
             </p>
         </div>
 
@@ -43,7 +43,7 @@
 
             <div class="flex justify-end pt-1.5">
                 <button type="submit" class="inline-flex h-11 items-center justify-center rounded-2xl bg-blue-600 px-5 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(37,99,235,0.22)] transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2">
-                    R&eacute;initialiser le mot de passe
+                    Réinitialiser le mot de passe
                 </button>
             </div>
         </form>

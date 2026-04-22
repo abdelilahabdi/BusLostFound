@@ -12,7 +12,7 @@
             </div>
             <h1 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Connexion</h1>
             <p class="mx-auto mt-2 max-w-sm text-sm text-slate-600">
-                Connectez-vous pour g&eacute;rer vos annonces et vos messages.
+                Connectez-vous pour gérer vos annonces et vos messages.
             </p>
         </div>
 
@@ -46,7 +46,7 @@
             <div class="flex flex-wrap items-center justify-between gap-3 pt-1.5">
                 @if (Route::has('password.request'))
                     <a class="text-sm font-medium text-slate-600 underline-offset-4 transition hover:text-slate-900 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 rounded-md" href="{{ route('password.request') }}">
-                        Mot de passe oubli&eacute; ?
+                        Mot de passe oublié ?
                     </a>
                 @endif
 

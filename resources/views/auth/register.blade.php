@@ -10,9 +10,9 @@
                     <circle cx="16" cy="13" r="1.1" fill="currentColor" />
                 </svg>
             </div>
-            <h1 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Cr&eacute;er un compte</h1>
+            <h1 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Créer un compte</h1>
             <p class="mx-auto mt-2 max-w-sm text-sm text-slate-600">
-                Rejoignez BusLost&amp;Found pour publier et retrouver vos objets.
+                Rejoignez BusLost&Found pour publier et retrouver vos objets.
             </p>
         </div>
 
@@ -32,7 +32,7 @@
             </div>
 
             <div>
-                <x-input-label for="phone" class="mb-1.5 text-sm font-semibold text-slate-700" :value="'T&eacute;l&eacute;phone (optionnel)'" />
+                <x-input-label for="phone" class="mb-1.5 text-sm font-semibold text-slate-700" :value="'Téléphone (optionnel)'" />
                 <x-text-input id="phone" class="block w-full rounded-2xl border-slate-300 px-4 py-2.5 text-sm text-slate-800 shadow-sm focus:border-blue-500 focus:ring-blue-100" type="text" name="phone" :value="old('phone')" autocomplete="tel" />
                 <x-input-error :messages="$errors->get('phone')" class="mt-2 text-xs font-medium text-red-600" />
             </div>
@@ -56,7 +56,7 @@
 
             <div class="flex flex-wrap items-center justify-between gap-3 pt-1.5">
                 <a class="text-sm font-medium text-slate-600 underline-offset-4 transition hover:text-slate-900 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 rounded-md" href="{{ route('login') }}">
-                    D&eacute;j&agrave; inscrit ?
+                    Déjà inscrit ?
                 </a>
 
                 <button type="submit" class="inline-flex h-11 items-center justify-center rounded-2xl bg-blue-600 px-5 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(37,99,235,0.22)] transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2">

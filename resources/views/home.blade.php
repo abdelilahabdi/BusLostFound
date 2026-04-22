@@ -24,18 +24,18 @@
             </h1>
 
             <p class="mt-7 max-w-3xl text-lg leading-8 text-blue-100">
-                BusLost&amp;Found centralise les annonces d'objets perdus et trouv&eacute;s dans le transport urbain.
+                BusLost&Found centralise les annonces d'objets perdus et trouvés dans le transport urbain.
                 Gagnez du temps et augmentez vos chances de retrouver vos biens rapidement.
             </p>
 
             <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row">
                 <a href="{{ route('announcements.create', ['type' => 'lost']) }}"
                     class="inline-flex min-w-64 items-center justify-center rounded-2xl bg-white px-7 py-3 text-base font-semibold text-blue-700 shadow-lg shadow-blue-900/15 transition hover:bg-blue-50">
-                    D&eacute;clarer un objet perdu
+                    Déclarer un objet perdu
                 </a>
                 <a href="{{ route('announcements.create', ['type' => 'found']) }}"
                     class="inline-flex min-w-64 items-center justify-center rounded-2xl border border-white/35 bg-white/10 px-7 py-3 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
-                    D&eacute;clarer un objet trouv&eacute;
+                    Déclarer un objet trouvé
                 </a>
             </div>
         </div>
@@ -43,9 +43,9 @@
 
     <section class="mt-16">
         <div class="mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">Comment &ccedil;a fonctionne ?</h2>
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">Comment ça fonctionne ?</h2>
             <p class="mt-4 text-lg text-slate-600">
-                Un processus simple en 4 &eacute;tapes pour retrouver ou restituer un objet.
+                Un processus simple en 4 étapes pour retrouver ou restituer un objet.
             </p>
         </div>
 
@@ -66,13 +66,13 @@
                     <li class="flex items-start gap-3">
                         <span
                             class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-600 text-base font-bold text-white">1</span>
-                        <p class="text-lg leading-8 text-slate-700">Cr&eacute;ez un compte gratuitement.</p>
+                        <p class="text-lg leading-8 text-slate-700">Créez un compte gratuitement.</p>
                     </li>
                     <li class="flex items-start gap-3">
                         <span
                             class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-600 text-base font-bold text-white">2</span>
                         <p class="text-lg leading-8 text-slate-700">
-                            D&eacute;clarez votre objet perdu avec tous les d&eacute;tails utiles.
+                            Déclarez votre objet perdu avec tous les détails utiles.
                         </p>
                     </li>
                     <li class="flex items-start gap-3">
@@ -86,7 +86,7 @@
                         <span
                             class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-600 text-base font-bold text-white">4</span>
                         <p class="text-lg leading-8 text-slate-700">
-                            Contactez la personne en toute s&eacute;curit&eacute; pour r&eacute;cup&eacute;rer votre bien.
+                            Contactez la personne en toute sécurité pour récupérer votre bien.
                         </p>
                     </li>
                 </ol>
@@ -102,19 +102,19 @@
                     </svg>
                 </div>
 
-                <h3 class="mt-6 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Vous avez trouv&eacute; un objet ?</h3>
+                <h3 class="mt-6 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Vous avez trouvé un objet ?</h3>
 
                 <ol class="mt-7 space-y-5">
                     <li class="flex items-start gap-3">
                         <span
                             class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-base font-bold text-white">1</span>
-                        <p class="text-lg leading-8 text-slate-700">Cr&eacute;ez un compte ou connectez-vous.</p>
+                        <p class="text-lg leading-8 text-slate-700">Créez un compte ou connectez-vous.</p>
                     </li>
                     <li class="flex items-start gap-3">
                         <span
                             class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-base font-bold text-white">2</span>
                         <p class="text-lg leading-8 text-slate-700">
-                            Publiez une annonce avec la description de l'objet trouv&eacute;.
+                            Publiez une annonce avec la description de l'objet trouvé.
                         </p>
                     </li>
                     <li class="flex items-start gap-3">
@@ -126,7 +126,7 @@
                         <span
                             class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-base font-bold text-white">4</span>
                         <p class="text-lg leading-8 text-slate-700">
-                            V&eacute;rifiez l'identit&eacute; du propri&eacute;taire avant de restituer l'objet.
+                            Vérifiez l'identité du propriétaire avant de restituer l'objet.
                         </p>
                     </li>
                 </ol>
@@ -136,7 +136,7 @@
 
     <section class="mt-16">
         <div class="mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">Pourquoi choisir BusLost&amp;Found ?</h2>
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">Pourquoi choisir BusLost&Found ?</h2>
             <p class="mt-4 text-lg text-slate-600">
                 Une plateforme claire et fiable pour retrouver vos objets en toute confiance.
             </p>
@@ -154,7 +154,7 @@
                 </div>
                 <h3 class="mt-6 text-2xl font-bold text-slate-900">Centralisation</h3>
                 <p class="mt-4 text-lg leading-8 text-slate-600">
-                    Toutes les annonces d'objets perdus et trouv&eacute;s sont regroup&eacute;es au m&ecirc;me endroit.
+                    Toutes les annonces d'objets perdus et trouvés sont regroupées au même endroit.
                 </p>
             </article>
 
@@ -169,7 +169,7 @@
                 </div>
                 <h3 class="mt-6 text-2xl font-bold text-slate-900">Gain de temps</h3>
                 <p class="mt-4 text-lg leading-8 text-slate-600">
-                    Recherchez rapidement par cat&eacute;gorie, ligne de bus, date et localisation.
+                    Recherchez rapidement par catégorie, ligne de bus, date et localisation.
                 </p>
             </article>
 
@@ -182,9 +182,9 @@
                             stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
-                <h3 class="mt-6 text-2xl font-bold text-slate-900">S&eacute;curit&eacute;</h3>
+                <h3 class="mt-6 text-2xl font-bold text-slate-900">Sécurité</h3>
                 <p class="mt-4 text-lg leading-8 text-slate-600">
-                    Messagerie interne et mod&eacute;ration pour favoriser des &eacute;changes responsables.
+                    Messagerie interne et modération pour favoriser des échanges responsables.
                 </p>
             </article>
         </div>
@@ -197,10 +197,10 @@
 
         <div class="relative mx-auto max-w-4xl text-center">
             <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-                Pr&ecirc;t &agrave; retrouver vos objets perdus ?
+                Prêt à retrouver vos objets perdus ?
             </h2>
             <p class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-blue-100">
-                Rejoignez la communaut&eacute; BusLost&amp;Found et augmentez vos chances de r&eacute;cup&eacute;rer vos biens.
+                Rejoignez la communauté BusLost&Found et augmentez vos chances de récupérer vos biens.
             </p>
 
             <div class="mt-10 flex justify-center">
@@ -211,12 +211,12 @@
                             <path
                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l.68 2.094a1 1 0 00.95.69h2.201c.969 0 1.371 1.24.588 1.81l-1.781 1.294a1 1 0 00-.364 1.118l.68 2.094c.3.922-.755 1.688-1.539 1.119L10.588 12.9a1 1 0 00-1.176 0l-1.78 1.295c-.784.57-1.838-.197-1.54-1.119l.68-2.094a1 1 0 00-.363-1.118L4.628 7.52c-.783-.57-.38-1.81.588-1.81h2.202a1 1 0 00.95-.69l.68-2.094z" />
                         </svg>
-                        Cr&eacute;er un compte gratuitement
+                        Créer un compte gratuitement
                     </a>
                 @else
                     <a href="{{ route('dashboard') }}"
                         class="inline-flex items-center justify-center rounded-2xl bg-white px-8 py-4 text-lg font-semibold text-blue-700 shadow-lg shadow-blue-900/15 transition hover:bg-blue-50 sm:text-xl">
-                        Acc&eacute;der &agrave; mon tableau de bord
+                        Accéder à mon tableau de bord
                     </a>
                 @endguest
             </div>

@@ -7,7 +7,7 @@
         <div class="mx-auto max-w-5xl">
             <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">Publier une annonce</h1>
             <p class="mt-3 text-base text-slate-600 sm:text-lg">
-                Renseignez les informations utiles pour d&eacute;clarer un objet perdu ou trouv&eacute;.
+                Renseignez les informations utiles pour déclarer un objet perdu ou trouvé.
             </p>
         </div>
     </section>
@@ -18,7 +18,7 @@
             @include('announcements.partials.form-fields', ['categories' => $categories, 'announcement' => null])
 
             <p class="rounded-2xl border border-blue-100 bg-blue-50 px-4 py-3 text-sm text-blue-700">
-                Le statut de l'annonce sera automatiquement d&eacute;fini sur &laquo; active &raquo;.
+                Le statut de l'annonce sera automatiquement défini sur « active ».
             </p>
 
             <div class="flex flex-wrap items-center gap-3 border-t border-slate-100 pt-6">

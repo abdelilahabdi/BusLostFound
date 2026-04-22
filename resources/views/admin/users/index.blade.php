@@ -3,7 +3,7 @@
 @section('title', 'BusLost&Found - Admin Utilisateurs')
 
 @section('admin-page-title', 'Gestion des utilisateurs')
-@section('admin-page-subtitle', 'Consultez et g&eacute;rez les comptes de la plateforme.')
+@section('admin-page-subtitle', 'Consultez et gérez les comptes de la plateforme.')
 @section('admin-page-actions')
     <a href="{{ route('admin.dashboard') }}" class="inline-flex h-10 items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">
         Retour au tableau de bord
@@ -21,7 +21,7 @@
             <p class="mt-2 text-3xl font-bold tracking-tight text-slate-900">{{ $totalUsers }}</p>
         </article>
         <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
-            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Utilisateurs affich&eacute;s</p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Utilisateurs affichés</p>
             <p class="mt-2 text-3xl font-bold tracking-tight text-slate-900">{{ $users->count() }}</p>
         </article>
     </section>
@@ -36,16 +36,16 @@
                     <path d="M16 3.13a3 3 0 010 5.74" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                 </svg>
             </div>
-            <h2 class="mt-5 text-xl font-semibold text-slate-900">Aucun utilisateur trouv&eacute;</h2>
+            <h2 class="mt-5 text-xl font-semibold text-slate-900">Aucun utilisateur trouvé</h2>
             <p class="mt-2 text-sm text-slate-600">
-                Les utilisateurs appara&icirc;tront ici d&egrave;s qu'ils seront inscrits.
+                Les utilisateurs apparaîtront ici dès qu'ils seront inscrits.
             </p>
         </section>
     @else
         <section class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
             <div class="border-b border-slate-200 px-5 py-4 sm:px-6">
                 <h2 class="text-lg font-semibold text-slate-900">Liste des comptes</h2>
-                <p class="mt-1 text-sm text-slate-600">Activez ou d&eacute;sactivez les utilisateurs selon les besoins de mod&eacute;ration.</p>
+                <p class="mt-1 text-sm text-slate-600">Activez ou désactivez les utilisateurs selon les besoins de modération.</p>
             </div>
 
             <div class="overflow-x-auto">
@@ -96,11 +96,11 @@
 
                                             @if ($user->is_active)
                                                 <button type="submit" class="inline-flex h-9 items-center justify-center rounded-2xl border border-red-300 bg-red-50 px-4 text-xs font-semibold text-red-700 transition hover:bg-red-100">
-                                                    D&eacute;sactiver
+                                                    Désactiver
                                                 </button>
                                             @else
                                                 <button type="submit" class="inline-flex h-9 items-center justify-center rounded-2xl border border-emerald-300 bg-emerald-50 px-4 text-xs font-semibold text-emerald-700 transition hover:bg-emerald-100">
-                                                    R&eacute;activer
+                                                    Réactiver
                                                 </button>
                                             @endif
                                         </form>

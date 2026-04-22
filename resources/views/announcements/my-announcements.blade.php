@@ -38,9 +38,9 @@
                         <path d="M8 9.5h8M8 13h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                     </svg>
                 </div>
-                <h2 class="mt-5 text-xl font-semibold text-slate-900">Vous n'avez pas encore publi&eacute; d'annonce</h2>
+                <h2 class="mt-5 text-xl font-semibold text-slate-900">Vous n'avez pas encore publié d'annonce</h2>
                 <p class="mt-2 text-sm text-slate-600 sm:text-base">
-                    Cliquez sur &laquo; Nouvelle annonce &raquo; pour ajouter votre premi&egrave;re annonce.
+                    Cliquez sur « Nouvelle annonce » pour ajouter votre première annonce.
                 </p>
             </section>
         @else
@@ -53,23 +53,23 @@
                             </h2>
                             <div class="flex flex-col items-end gap-1.5">
                                 <span class="rounded-full px-2.5 py-1 text-xs font-semibold uppercase {{ $announcement->type === 'lost' ? 'bg-red-100 text-red-600' : 'bg-emerald-100 text-emerald-600' }}">
-                                    {{ $announcement->type === 'lost' ? 'Perdu' : 'Trouv&eacute;' }}
+                                    {{ $announcement->type === 'lost' ? 'Perdu' : 'Trouvé' }}
                                 </span>
                                 <span class="rounded-full px-2.5 py-1 text-xs font-semibold uppercase {{ $announcement->status === 'active' ? 'bg-teal-100 text-teal-700' : 'bg-slate-100 text-slate-700' }}">
-                                    {{ $announcement->status === 'active' ? 'Active' : 'R&eacute;solue' }}
+                                    {{ $announcement->status === 'active' ? 'Active' : 'Résolue' }}
                                 </span>
                             </div>
                         </div>
 
                         <div class="mt-4 space-y-2 text-sm text-slate-600">
-                            <p><span class="font-medium text-slate-700">Cat&eacute;gorie:</span> {{ $announcement->category->name }}</p>
+                            <p><span class="font-medium text-slate-700">Catégorie:</span> {{ $announcement->category->name }}</p>
                             <p><span class="font-medium text-slate-700">Lieu:</span> {{ $announcement->location }}</p>
                             <p><span class="font-medium text-slate-700">Date:</span> {{ $announcement->event_date?->format('d/m/Y') }}</p>
                         </div>
 
                         <div class="mt-5 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-4">
                             <a href="{{ route('announcements.show', $announcement) }}" class="inline-flex h-10 items-center justify-center rounded-2xl bg-blue-600 px-4 text-sm font-semibold text-white hover:bg-blue-700">
-                                Voir les d&eacute;tails
+                                Voir les détails
                             </a>
 
                             <a href="{{ route('announcements.edit', $announcement) }}" class="inline-flex h-10 items-center justify-center rounded-2xl border border-slate-300 px-4 text-sm font-semibold text-slate-700 hover:bg-slate-100">
@@ -81,7 +81,7 @@
                                     @csrf
                                     @method('PATCH')
                                     <button type="submit" class="inline-flex h-10 items-center justify-center rounded-2xl border border-teal-300 bg-teal-50 px-4 text-sm font-semibold text-teal-700 hover:bg-teal-100">
-                                        Marquer comme r&eacute;solue
+                                        Marquer comme résolue
                                     </button>
                                 </form>
                             @endif

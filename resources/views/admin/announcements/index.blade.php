@@ -28,7 +28,7 @@
             <p class="mt-2 text-3xl font-bold tracking-tight text-emerald-700">{{ $activeAnnouncementsOnPage }}</p>
         </article>
         <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
-            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">R&eacute;solues (cette page)</p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Résolues (cette page)</p>
             <p class="mt-2 text-3xl font-bold tracking-tight text-slate-700">{{ $resolvedAnnouncementsOnPage }}</p>
         </article>
     </section>
@@ -42,7 +42,7 @@
             </div>
             <h2 class="mt-5 text-xl font-semibold text-slate-900">Aucune annonce disponible</h2>
             <p class="mt-2 text-sm text-slate-600">
-                Les annonces appara&icirc;tront ici quand elles seront publi&eacute;es.
+                Les annonces apparaîtront ici quand elles seront publiées.
             </p>
         </section>
     @else
@@ -50,7 +50,7 @@
             <div class="border-b border-slate-200 px-5 py-4 sm:px-6">
                 <h2 class="text-lg font-semibold text-slate-900">Liste des annonces</h2>
                 <p class="mt-1 text-sm text-slate-600">
-                    Mettez &agrave; jour le statut des annonces et supprimez les contenus non conformes.
+                    Mettez à jour le statut des annonces et supprimez les contenus non conformes.
                 </p>
             </div>
 
@@ -60,11 +60,11 @@
                         <tr>
                             <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Titre</th>
                             <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Type</th>
-                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Cat&eacute;gorie</th>
+                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Catégorie</th>
                             <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Lieu</th>
                             <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Date</th>
                             <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Statut</th>
-                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Publi&eacute; par</th>
+                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Publié par</th>
                             <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Actions</th>
                         </tr>
                     </thead>
@@ -79,7 +79,7 @@
                                         </span>
                                     @else
                                         <span class="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
-                                            Trouv&eacute;
+                                            Trouvé
                                         </span>
                                     @endif
                                 </td>
@@ -93,7 +93,7 @@
                                         </span>
                                     @else
                                         <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">
-                                            R&eacute;solue
+                                            Résolue
                                         </span>
                                     @endif
                                 </td>
@@ -118,7 +118,7 @@
                                             @method('PATCH')
                                             <input type="hidden" name="status" value="resolved">
                                             <button type="submit" class="inline-flex h-9 items-center justify-center rounded-2xl border border-slate-300 bg-slate-100 px-3.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-200">
-                                                Marquer r&eacute;solue
+                                                Marquer résolue
                                             </button>
                                         </form>
 

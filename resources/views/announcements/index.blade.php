@@ -9,7 +9,7 @@
                 <div class="max-w-3xl">
                     <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">Rechercher un objet</h1>
                     <p class="mt-3 text-base text-slate-600 sm:text-lg">
-                        Retrouvez rapidement un objet perdu ou trouv&eacute; parmi les annonces publi&eacute;es.
+                        Retrouvez rapidement un objet perdu ou trouvé parmi les annonces publiées.
                     </p>
                 </div>
 
@@ -152,7 +152,7 @@
     @else
         <div class="mt-8 flex flex-wrap items-center justify-between gap-3">
             <p class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1.5 text-sm font-semibold text-slate-700">
-                {{ $announcements->total() }} r&eacute;sultat{{ $announcements->total() > 1 ? 's' : '' }}
+                {{ $announcements->total() }} résultat{{ $announcements->total() > 1 ? 's' : '' }}
             </p>
 
             @if (($filters['q'] ?? '') !== '')

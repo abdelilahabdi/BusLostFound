@@ -8,7 +8,7 @@
             <div class="max-w-3xl">
                 <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">Mes conversations</h1>
                 <p class="mt-3 text-base text-slate-600 sm:text-lg">
-                    Retrouvez ici vos &eacute;changes class&eacute;s par annonce et par participant.
+                    Retrouvez ici vos échanges classés par annonce et par participant.
                 </p>
             </div>
 
@@ -29,7 +29,7 @@
             </div>
             <h2 class="mt-5 text-xl font-semibold text-slate-900">Aucune conversation</h2>
             <p class="mt-2 text-sm text-slate-600 sm:text-base">
-                Vos conversations appara&icirc;tront ici apr&egrave;s vos premiers &eacute;changes.
+                Vos conversations apparaîtront ici après vos premiers échanges.
             </p>
         </section>
     @else

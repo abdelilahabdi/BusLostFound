@@ -28,7 +28,7 @@
             <p class="mt-2 text-3xl font-bold tracking-tight text-amber-700">{{ $pendingReportsOnPage }}</p>
         </article>
         <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
-            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Trait&eacute;s (cette page)</p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Traités (cette page)</p>
             <p class="mt-2 text-3xl font-bold tracking-tight text-emerald-700">{{ $reviewedReportsOnPage }}</p>
         </article>
     </section>
@@ -41,9 +41,9 @@
                     <path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                 </svg>
             </div>
-            <h2 class="mt-5 text-xl font-semibold text-slate-900">Aucun signalement trouv&eacute;</h2>
+            <h2 class="mt-5 text-xl font-semibold text-slate-900">Aucun signalement trouvé</h2>
             <p class="mt-2 text-sm text-slate-600">
-                Les signalements appara&icirc;tront ici quand des utilisateurs en enverront.
+                Les signalements apparaîtront ici quand des utilisateurs en enverront.
             </p>
         </section>
     @else
@@ -51,7 +51,7 @@
             <div class="border-b border-slate-200 px-5 py-4 sm:px-6">
                 <h2 class="text-lg font-semibold text-slate-900">Liste des signalements</h2>
                 <p class="mt-1 text-sm text-slate-600">
-                    Analysez les signalements et marquez-les comme trait&eacute;s apr&egrave;s v&eacute;rification.
+                    Analysez les signalements et marquez-les comme traités après vérification.
                 </p>
             </div>
 
@@ -61,7 +61,7 @@
                         <tr>
                             <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">ID</th>
                             <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Annonce</th>
-                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Signal&eacute; par</th>
+                            <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Signalé par</th>
                             <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Raison</th>
                             <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Statut</th>
                             <th class="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Date</th>
@@ -88,11 +88,11 @@
                                 <td class="px-5 py-4 text-sm">
                                     @if ($report->status === 'pending')
                                         <span class="inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
-                                            Non trait&eacute;
+                                            Non traité
                                         </span>
                                     @else
                                         <span class="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
-                                            Trait&eacute;
+                                            Traité
                                         </span>
                                     @endif
                                 </td>
@@ -110,12 +110,12 @@
                                                 @csrf
                                                 @method('PATCH')
                                                 <button type="submit" class="inline-flex h-9 items-center justify-center rounded-2xl border border-emerald-600 bg-emerald-600 px-3.5 text-xs font-semibold text-white transition hover:bg-emerald-700">
-                                                    Marquer comme trait&eacute;
+                                                    Marquer comme traité
                                                 </button>
                                             </form>
                                         @else
                                             <span class="inline-flex h-9 items-center justify-center rounded-2xl border border-slate-200 bg-slate-100 px-3.5 text-xs font-semibold text-slate-500">
-                                                D&eacute;j&agrave; trait&eacute;
+                                                Déjà traité
                                             </span>
                                         @endif
                                     </div>

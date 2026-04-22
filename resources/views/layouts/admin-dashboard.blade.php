@@ -63,7 +63,7 @@
                     type="submit"
                     class="inline-flex h-11 w-full items-center justify-center rounded-2xl border border-red-500/40 bg-red-500/10 px-4 text-sm font-semibold text-red-300 transition hover:bg-red-500/20 hover:text-red-200"
                 >
-                    D&eacute;connexion
+                    Déconnexion
                 </button>
             </form>
         </div>
@@ -124,7 +124,7 @@
                     type="submit"
                     class="inline-flex h-11 w-full items-center justify-center rounded-2xl border border-red-500/40 bg-red-500/10 px-4 text-sm font-semibold text-red-300 transition hover:bg-red-500/20 hover:text-red-200"
                 >
-                    D&eacute;connexion
+                    Déconnexion
                 </button>
             </form>
         </div>
@@ -140,7 +140,7 @@
                             @yield('admin-page-title', 'Tableau de bord administrateur')
                         </h1>
                         <p class="mt-2 text-sm text-slate-600 sm:text-base">
-                            @yield('admin-page-subtitle', 'Vue d\'ensemble des activit&eacute;s de la plateforme.')
+                            @yield('admin-page-subtitle', 'Vue d\'ensemble des activités de la plateforme.')
                         </p>
                     </div>
 
