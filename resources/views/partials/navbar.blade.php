@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur shadow-[0_1px_3px_rgba(15,23,42,0.05)]">
+<header class="fixed inset-x-0 top-0 z-[70] border-b border-slate-200 bg-white/95 backdrop-blur shadow-[0_1px_3px_rgba(15,23,42,0.05)]">
     <nav class="mx-auto w-full max-w-[1440px] px-3 sm:px-8 lg:px-12" aria-label="Navigation principale">
         <div class="flex flex-wrap items-center gap-x-3 gap-y-2.5 py-3 sm:gap-x-4 sm:py-4">
             <a href="{{ route('home') }}"
