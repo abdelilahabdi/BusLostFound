@@ -10,7 +10,11 @@
 <body class="min-h-screen overflow-x-hidden bg-slate-50 text-slate-800">
     @include('partials.navbar')
 
-    <div class="pt-32 sm:pt-28 lg:pt-24">
+    @php
+        $isHomePage = request()->routeIs('home');
+    @endphp
+
+    <div class="{{ $isHomePage ? 'pt-0' : 'pt-32 sm:pt-28 lg:pt-24' }}">
         @isset($header)
             <header class="border-b border-slate-200 bg-white">
                 <div class="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
@@ -19,7 +23,7 @@
             </header>
         @endisset
 
-        <main class="py-8">
+        <main class="{{ $isHomePage ? 'py-0' : 'py-8' }}">
             <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
                 {{-- Placeholder area for future flash and validation messages --}}
                 @if (session('success'))

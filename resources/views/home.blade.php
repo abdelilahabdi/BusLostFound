@@ -295,7 +295,7 @@
     </section>
 
     <section
-        class="relative left-1/2 mt-32 mb-1 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 sm:mt-36">
+        class="relative left-1/2 mt-32 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 sm:mt-36">
         <div class="absolute inset-0">
             <img src="{{ asset('images/ui/home/hero-bus.jpg') }}" alt="Bus en arrière-plan"
                 class="h-full w-full object-cover opacity-15">

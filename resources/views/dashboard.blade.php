@@ -257,7 +257,7 @@
                                     Répondez rapidement aux contacts
                                 </li>
                             </ul>
-                            <a href="{{ route('home') }}"
+                            <a href="{{ route('announcements.index') }}"
                                 class="mt-7 inline-flex h-12 items-center justify-center rounded-2xl bg-white px-6 text-sm font-semibold text-teal-700 shadow-[0_8px_18px_rgba(255,255,255,0.24)] transition hover:bg-teal-50">
                                 Commencer la recherche
                             </a>
