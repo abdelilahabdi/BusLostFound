@@ -31,7 +31,7 @@ class Message extends Model
     protected function casts(): array
     {
         return [
-            'is_read' => 'boolean',  //cheack
+            'is_read' => 'boolean',  
         ];
     }
 
