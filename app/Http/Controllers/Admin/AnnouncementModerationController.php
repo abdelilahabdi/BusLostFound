@@ -55,6 +55,6 @@ class AnnouncementModerationController extends Controller
 
         return redirect()
             ->route('admin.announcements.index')
-            ->with('success', 'Annonce supprimee avec succes.');
+            ->with('success', 'Annonce supprimee avec succes.');  //anonce
     }
 }
