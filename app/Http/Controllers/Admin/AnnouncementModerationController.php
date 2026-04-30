@@ -51,7 +51,7 @@ class AnnouncementModerationController extends Controller
      */
     public function destroy(Announcement $announcement): RedirectResponse
     {
-        $announcement->delete(); // delet
+        $announcement->delete(); 
 
         return redirect()
             ->route('admin.announcements.index')
