@@ -76,7 +76,7 @@ class DashboardController extends Controller
             9 => 'Septembre',
             10 => 'Octobre',
             11 => 'Novembre',
-            12 => 'Decembre',  //decembre
+            12 => 'Decembre',  
         ];
 
         $announcements = Announcement::query()
