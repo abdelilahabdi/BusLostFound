@@ -32,7 +32,7 @@ class ReportManagementController extends Controller
      */
     public function markReviewed(Report $report): RedirectResponse
     {
-        $report->update([
+        $report->update([    // report
             'status' => 'reviewed',
         ]);
 
