@@ -46,6 +46,6 @@ class UserManagementController extends Controller
 
         return redirect()
             ->route('admin.users.index')  
-            ->with('success', $message); //message
+            ->with('success', $message); 
     }
 }
