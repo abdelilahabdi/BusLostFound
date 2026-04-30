@@ -43,7 +43,7 @@ class AnnouncementModerationController extends Controller
 
         return redirect()
             ->route('admin.announcements.index')
-            ->with('success', 'Statut de l\'annonce mis a jour avec succes.');
+            ->with('success', 'Statut de l\'annonce mis a jour avec succes.'); // mis a jour
     }
 
     /**
