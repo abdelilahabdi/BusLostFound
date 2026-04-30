@@ -17,7 +17,7 @@ class CategorySeeder extends Seeder
             'Telephone',
             'Sac',
             'Vetements',
-            'Accessoires',    // doc 
+            'Accessoires',    
             'Autre',
         ];
 
