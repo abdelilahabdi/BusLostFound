@@ -45,7 +45,7 @@ class UserManagementController extends Controller
             : 'Compte utilisateur desactive avec succes.';
 
         return redirect()
-            ->route('admin.users.index')  //user
-            ->with('success', $message);
+            ->route('admin.users.index')  
+            ->with('success', $message); //message
     }
 }
