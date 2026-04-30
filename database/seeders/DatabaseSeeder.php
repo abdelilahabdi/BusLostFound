@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
 
         // User::factory(10)->create();
 
-        User::firstOrCreate(   // cheacker data base
+        User::firstOrCreate(   
             ['email' => 'admin@gmail.com'],
             [
                 'name' => 'Abdelilah',
