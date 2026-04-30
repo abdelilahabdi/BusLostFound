@@ -38,6 +38,6 @@ class ReportManagementController extends Controller
 
         return redirect()
             ->route('admin.reports.index')
-            ->with('success', 'Signalement marque comme examine.');
+            ->with('success', 'Signalement marque comme examine.'); //report
     }
 }
