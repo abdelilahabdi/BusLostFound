@@ -56,7 +56,7 @@ Route::middleware(['auth', 'active.user'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::prefix('admin')->name('admin.')->middleware(['auth', 'active.user', 'admin'])->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'active.user', 'admin'])->group(function () {  //prefix alllase f midlware
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/announcements', [AnnouncementModerationController::class, 'index'])->name('announcements.index');
