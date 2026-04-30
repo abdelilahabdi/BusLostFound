@@ -15,7 +15,7 @@ class Category extends Model
      *
      * @var list<string>
      */
-    protected $fillable = [   //category 
+    protected $fillable = [   //category de model
         'name',
     ];
 
