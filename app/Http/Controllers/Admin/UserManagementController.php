@@ -42,7 +42,7 @@ class UserManagementController extends Controller
 
         $message = $user->is_active
             ? 'Compte utilisateur active avec succes.'
-            : 'Compte utilisateur desactive avec succes.';
+            : 'Compte utilisateur desactive avec succes.'; // succes
 
         return redirect()
             ->route('admin.users.index')  
