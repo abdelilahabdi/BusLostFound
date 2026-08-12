@@ -10,9 +10,9 @@ use Illuminate\View\View;
 
 class UserManagementController extends Controller
 {
-    /**
-     * Display a paginated list of users.
-     */
+    
+     // afficher a paginated list of users.
+     
     public function index(): View
     {
         $users = User::query()
@@ -25,9 +25,9 @@ class UserManagementController extends Controller
         ]);
     }
 
-    /**
-     * Toggle active status for a user account.
-     */
+    
+     // changer active status for a user account.
+     
     public function toggleActive(Request $request, User $user): RedirectResponse
     {
         if ($request->user()->id === $user->id) {

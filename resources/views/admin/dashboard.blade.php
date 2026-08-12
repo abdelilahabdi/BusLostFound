@@ -1,5 +1,5 @@
 @extends('layouts.admin-dashboard')
-
+<!-- moderation et statistique -->
 @section('title', 'BusLost&Found - Admin Dashboard')
 
 @section('admin-page-title', 'Tableau de bord administrateur')

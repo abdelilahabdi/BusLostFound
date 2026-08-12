@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+            <!-- list filter pagination partie recherche -->
 @section('title', 'BusLost&Found - Annonces')
 
 @section('content')

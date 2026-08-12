@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!-- page user normal  -->
+<!DOCTYPE html>             
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  class="overflow-x-hidden">
 <head>
     <meta charset="utf-8">

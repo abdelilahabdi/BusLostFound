@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
-    /**
-     * Store a new report for an announcement.
-     */
+    
+     // Store a new report for an announcement.            de user
+     
     public function store(Request $request, Announcement $announcement): RedirectResponse
     {
         if ($request->user()->id === $announcement->user_id) {

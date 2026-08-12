@@ -13,10 +13,10 @@ use Illuminate\View\View;
 
 class MessageController extends Controller
 {
-    /**
-     * Display messages involving the authenticated user.
-     */
-    public function index(Request $request): View
+    
+     // afficher messages involving f the authenticated user.
+     
+    public function index(Request $request): View    // afficher conversation
     {
         $user = $request->user();
 
@@ -32,7 +32,7 @@ class MessageController extends Controller
                 );
             })
             ->unique()
-            ->flip();
+            ->flip();  //rchrch en easy a partir has
 
         $messages = Message::query()
             ->with([
@@ -44,7 +44,7 @@ class MessageController extends Controller
                 $query->where('sender_id', $user->id)
                     ->orWhere('receiver_id', $user->id);
             })
-            ->latest()
+            ->latest()  // men new l old
             ->get();
 
         $groupedConversations = $messages
@@ -98,9 +98,9 @@ class MessageController extends Controller
         ]);
     }
 
-    /**
-     * Display a single conversation thread.
-     */
+    
+     // afficher a single conversation thread.
+     
     public function show(Request $request, Announcement $announcement, User $participant): View
     {
         $user = $request->user();
@@ -158,9 +158,9 @@ class MessageController extends Controller
         ]);
     }
 
-    /**
-     * Build a stable key for a conversation.
-     */
+    
+     // Build a stable key for a conversation.
+     
     private function buildConversationKey(int $announcementId, int $firstUserId, int $secondUserId): string
     {
         $participantIds = [$firstUserId, $secondUserId];
@@ -169,9 +169,9 @@ class MessageController extends Controller
         return $announcementId . '-' . $participantIds[0] . '-' . $participantIds[1];
     }
 
-    /**
-     * Store a new message for an announcement owner.
-     */
+    
+     // Store a new message for an announcement owner.
+     
     public function store(Request $request, Announcement $announcement): RedirectResponse
     {
         $validated = $request->validate([

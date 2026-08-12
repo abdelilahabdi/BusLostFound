@@ -19,20 +19,20 @@ class Report extends Model
         'user_id',
         'announcement_id',
         'reason',
-        'status',
+        'status',  // pending or reviewed
     ];
 
-    /**
-     * Get the user who submitted this report.
-     */
+    
+     // Get the user who submitted this report.  chaque report traiter men one user
+     
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * Get the announcement that was reported.
-     */
+    
+      // Get the announcement that was reported.  chaque report suivi en one annonce
+     
     public function announcement(): BelongsTo
     {
         return $this->belongsTo(Announcement::class);

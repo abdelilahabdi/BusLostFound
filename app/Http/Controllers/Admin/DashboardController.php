@@ -11,10 +11,10 @@ use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
-    /**
-     * Display the admin dashboard.
-     */
-    public function index(Request $request): View
+     
+     // afficher the admin dashboard.            dyal admin
+     
+    public function index(Request $request): View           // pour statistiques
     {
         $now = now();
         $currentYear = (int) $now->year;

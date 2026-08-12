@@ -31,29 +31,29 @@ class Message extends Model
     protected function casts(): array
     {
         return [
-            'is_read' => 'boolean',  
+            'is_read' => 'boolean',  // 0 or 1
         ];
     }
 
-    /**
-     * Get the sender user of the message.
-     */
+    
+     // Get the sender user of the message.  chaque msg have one user is sender
+     
     public function sender(): BelongsTo
     {
         return $this->belongsTo(User::class, 'sender_id');
     }
 
-    /**
-     * Get the receiver user of the message.
-     */
+    
+     // Get the receiver user of the message. chaque message have one user reciver
+     
     public function receiver(): BelongsTo
     {
         return $this->belongsTo(User::class, 'receiver_id');
     }
 
-    /**
-     * Get the announcement linked to this message.
-     */
+    
+     // Get the announcement linked to this message.   chaque messag lier with one annonce
+     
     public function announcement(): BelongsTo
     {
         return $this->belongsTo(Announcement::class);

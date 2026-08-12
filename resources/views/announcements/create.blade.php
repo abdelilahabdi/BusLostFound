@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+ <!-- pour create une nouvelle annonce -->
 @section('title', 'BusLost&Found - Nouvelle annonce')
 
 @section('content')

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'BusLost&Found - Mes annonces')
-
+  <!-- mes annonces -->
 @section('content')
     <section class="rounded-3xl bg-slate-50/70 p-6 ring-1 ring-slate-200 sm:p-10">
         <div class="mx-auto max-w-5xl">

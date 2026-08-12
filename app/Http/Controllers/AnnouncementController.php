@@ -10,9 +10,9 @@ use Illuminate\View\View;
 
 class AnnouncementController extends Controller
 {
-    /**
-     * Display the connected user's announcements.
-     */
+    
+     // afficher the connected user's announcements.
+     
     public function myAnnouncements(Request $request): View
     {
         $announcements = $request->user()
@@ -26,13 +26,13 @@ class AnnouncementController extends Controller
         ]);
     }
 
-    /**
-     * Display a paginated list of announcements.
-     */
+    
+     // afficher tout a paginated list of announcements with filters
+    
     public function index(Request $request): View
     {
         $filters = $request->validate([
-            'q' => ['nullable', 'string', 'max:255'],
+            'q' => ['nullable', 'string', 'max:255'],    // recherch en title et description
             'category_id' => ['nullable', 'integer', 'exists:categories,id'],
             'type' => ['nullable', 'in:lost,found'],
             'status' => ['nullable', 'in:active,resolved'],
@@ -42,13 +42,13 @@ class AnnouncementController extends Controller
 
         $query = Announcement::with([
             'user:id,name',
-            'category:id,name',
+            'category:id,name',  
         ]);
 
         if (!empty($filters['q'])) {
             $keyword = $filters['q'];
 
-            $query->where(function ($subQuery) use ($keyword) {
+            $query->where(function ($subQuery) use ($keyword) {   // search b title et discription
                 $subQuery->where('title', 'like', '%' . $keyword . '%')
                     ->orWhere('description', 'like', '%' . $keyword . '%');
             });
@@ -62,7 +62,7 @@ class AnnouncementController extends Controller
             $query->where('type', $filters['type']);
         }
 
-        if (!empty($filters['status'])) {
+        if (!empty($filters['status'])) {   
             $query->where('status', $filters['status']);
         }
 
@@ -84,25 +84,25 @@ class AnnouncementController extends Controller
         ]);
     }
 
-    /**
-     * Display a single announcement.
-     */
-    public function show(Announcement $announcement): View
+    
+      // afficher a single announcement.
+     
+    public function show(Announcement $announcement): View  // pour detail
     {
         $announcement->loadMissing([
             'user:id,name',
             'category:id,name',
         ]);
 
-        return view('announcements.show', [
+        return view('announcements.show', [  
             'announcement' => $announcement,
         ]);
     }
 
-    /**
-     * Show the form to create a new announcement.
-     */
-    public function create(): View
+    
+     // Show the form to create a new announcement.
+     
+    public function create(): View  
     {
         $categories = Category::orderBy('name')->get();
 
@@ -111,26 +111,26 @@ class AnnouncementController extends Controller
         ]);
     }
 
-    /**
-     * Store a new announcement in the database.
-     */
+    
+      // Store form et stocker a new announcement in the database  store create new annonce
+     
     public function store(Request $request): RedirectResponse
     {
         $validated = $this->validateAnnouncement($request);
 
         $validated['status'] = 'active';
 
-        $request->user()->announcements()->create($validated);
+        $request->user()->announcements()->create($validated);  //relation
 
-        return redirect()->route('dashboard')->with('success', 'Annonce creee avec succes.');
+        return redirect()->route('dashboard')->with('success', 'Annonce cree avec succes .');  //user en qliqu submit
     }
 
-    /**
-     * Show the form to edit an existing announcement.
-     */
+    
+     // Show the form to edit an existing announcement.
+     
     public function edit(Announcement $announcement): View
     {
-        $this->ensureOwner($announcement);
+        $this->ensureOwner($announcement);   // just owner de annonce li possible editer
 
         $categories = Category::orderBy('name')->get();
 
@@ -140,9 +140,9 @@ class AnnouncementController extends Controller
         ]);
     }
 
-    /**
-     * Update an existing announcement.
-     */
+    
+     // Update an existing announcement.
+     
     public function update(Request $request, Announcement $announcement): RedirectResponse
     {
         $this->ensureOwner($announcement);
@@ -152,9 +152,9 @@ class AnnouncementController extends Controller
         return redirect()->route('announcements.my')->with('success', 'Annonce mise a jour avec succes.');
     }
 
-    /**
-     * Delete an existing announcement.
-     */
+    
+     // Delete an existing announcement.
+     
     public function destroy(Announcement $announcement): RedirectResponse
     {
         $this->ensureOwner($announcement);
@@ -164,9 +164,9 @@ class AnnouncementController extends Controller
         return redirect()->route('announcements.my')->with('success', 'Annonce supprimee avec succes.');
     }
 
-    /**
-     * Mark an announcement as resolved.
-     */
+    
+     // Mark an announcement as resolved.
+     
     public function markResolved(Announcement $announcement): RedirectResponse
     {
         $this->ensureOwner($announcement);
@@ -185,7 +185,7 @@ class AnnouncementController extends Controller
      */
     private function validateAnnouncement(Request $request): array
     {
-        return $request->validate([
+        return $request->validate([   //lie validation entre create et update f meme place
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
             'category_id' => ['required', 'exists:categories,id'],
@@ -197,12 +197,12 @@ class AnnouncementController extends Controller
         ]);
     }
 
-    /**
-     * Ensure the connected user owns the given announcement.
-     */
-    private function ensureOwner(Announcement $announcement): void
+    
+     // Ensure the connected user owns the given announcement.
+     
+    private function ensureOwner(Announcement $announcement): void  //pour confirmer user lie with annonce specifique
     {
-        if (auth()->id() !== $announcement->user_id) {
+        if (auth()->id() !== $announcement->user_id) {   // this annonce is not lie with this user actuel 
             abort(403);
         }
     }

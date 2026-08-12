@@ -1,5 +1,5 @@
 @extends('layouts.admin-dashboard')
-
+<!-- moderer annonce  -->
 @section('title', 'BusLost&Found - Admin Annonces')
 
 @section('admin-page-title', 'Moderation des annonces')

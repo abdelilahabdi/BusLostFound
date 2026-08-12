@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<!-- pertie voir detail et report et contact owner -->
 @section('title', 'BusLost&Found - Détail annonce')
 
 @section('content')

@@ -16,12 +16,12 @@ class Category extends Model
      * @var list<string>
      */
     protected $fillable = [   
-        'name',
+        'name',   //tele or sac ...
     ];
 
-    /**
-     * Get the announcements that belong to this category.
-     */
+    
+     // Get the announcements that belong to this category.  chaque category have a plusieurs annonce 
+     
     public function announcements(): HasMany
     {
         return $this->hasMany(Announcement::class);

@@ -10,9 +10,9 @@ use Illuminate\View\View;
 
 class AnnouncementModerationController extends Controller
 {
-    /**
-     * Display a paginated list of announcements for moderation.
-     */
+    
+     // afficher a paginated list of announcements for moderation.
+     
     public function index(): View
     {
         $announcements = Announcement::query()
@@ -28,9 +28,9 @@ class AnnouncementModerationController extends Controller
         ]);
     }
 
-    /**
-     * Update announcement status (active or resolved).
-     */
+    
+     // Update announcement status (active or resolved).
+     
     public function updateStatus(Request $request, Announcement $announcement): RedirectResponse
     {
         $validated = $request->validate([
@@ -46,9 +46,9 @@ class AnnouncementModerationController extends Controller
             ->with('success', 'Statut de l\'annonce mis a jour avec succes.'); 
     }
 
-    /**
-     * Delete an announcement.
-     */
+    
+     // Delete an announcement.
+     
     public function destroy(Announcement $announcement): RedirectResponse
     {
         $announcement->delete(); 

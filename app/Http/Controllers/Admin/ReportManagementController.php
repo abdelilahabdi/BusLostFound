@@ -9,9 +9,9 @@ use Illuminate\View\View;
 
 class ReportManagementController extends Controller
 {
-    /**
-     * Display a paginated list of reports.
-     */
+    
+     // afficher a paginated list of reports.
+     
     public function index(): View
     {
         $reports = Report::query()
@@ -27,9 +27,9 @@ class ReportManagementController extends Controller
         ]);
     }
 
-    /**
-     * Mark a report as reviewed.
-     */
+    
+     // Mark a report as reviewed.
+     
     public function markReviewed(Report $report): RedirectResponse
     {
         $report->update([  

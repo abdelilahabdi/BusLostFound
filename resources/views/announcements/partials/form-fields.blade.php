@@ -2,6 +2,7 @@
     $announcement = $announcement ?? null;
     $selectedType = old('type', $announcement?->type ?? request('type') ?? 'lost');
 @endphp
+<!-- pour create nouvell annonce entre creat w edit relation pour eviter repeter le meme form f create w edit -->
 
 <div class="space-y-7">
     <section class="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-6">

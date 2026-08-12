@@ -51,33 +51,33 @@ class User extends Authenticatable
         ];
     }
 
-    /**
-     * Get the announcements created by this user.
-     */
+    
+     // Get the announcements created by this one user.
+     
     public function announcements(): HasMany
     {
         return $this->hasMany(Announcement::class);
     }
 
-    /**
-     * Get the reports submitted by this user.
-     */
+    
+      // Get the reports submitted by this one user.
+     
     public function reports(): HasMany
     {
         return $this->hasMany(Report::class);
     }
 
-    /**
-     * Get messages sent by this user.
-     */
+    
+     // Get messages sent by this one user.
+     
     public function sentMessages(): HasMany
     {
         return $this->hasMany(Message::class, 'sender_id');
     }
 
-    /**
-     * Get messages received by this user.
-     */
+    
+     // Get messages received by this one user.
+     
     public function receivedMessages(): HasMany
     {
         return $this->hasMany(Message::class, 'receiver_id');

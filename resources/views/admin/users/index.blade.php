@@ -1,5 +1,6 @@
 @extends('layouts.admin-dashboard')
 
+<!-- pour admin desactiver et avtiver un compte user -->
 @section('title', 'BusLost&Found - Admin Utilisateurs')
 
 @section('admin-page-title', 'Gestion des utilisateurs')

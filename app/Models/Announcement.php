@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Model;
 
-class Announcement extends Model
+class Announcement extends Model   //table annonc f db
 {
     use HasFactory;
 
@@ -16,7 +16,7 @@ class Announcement extends Model
      *
      * @var list<string>
      */
-    protected $fillable = [
+    protected $fillable = [     //pour db
         'user_id',
         'category_id',
         'title',
@@ -31,7 +31,7 @@ class Announcement extends Model
     ];
 
     /**
-     * Get the attributes that should be cast.
+     * Get the attributes that should be cast. objet
      *
      * @return array<string, string>
      */
@@ -42,33 +42,33 @@ class Announcement extends Model
         ];
     }
 
-    /**
-     * Get the user that owns this announcement.
-     */
-    public function user(): BelongsTo
+    
+     // Get the user that owns this announcement.  chaque annonce en suivi l one user
+     
+    public function user(): BelongsTo   //fk user id
     {
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * Get the category of this announcement.
-     */
+    
+     // Get the category of this announcement.  chaque annonce en suivi l one category
+     
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
 
-    /**
-     * Get the reports for this announcement.
-     */
+    
+     // Get the reports for this announcement.  chaque annonce have plusieur reports
+     
     public function reports(): HasMany
     {
         return $this->hasMany(Report::class);
     }
 
-    /**
-     * Get messages linked to this announcement.
-     */
+    
+     // Get messages linked to this announcement. chaque annonce have plusieur msg
+     
     public function messages(): HasMany
     {
         return $this->hasMany(Message::class);
